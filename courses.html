@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartTech Academy — Cursos</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+   <style>
+    .btn-inscribirse {
+      border-radius: 5px;
+    }
+
+     .btn-masinfo.purple {
+     background-color: #7c3aed !important;
+     border-radius: 5px;
+     }
+
+     .btn-masinfo.orange {
+      border-radius: 5px;
+     }
+
+     .btn-masinfo.green {
+      border-radius: 5px;
+     }
+
+     .btn-masinfo.pink {
+      background-color: #db2979;
+     }
+
+     .btn-masinfo.yellow{
+      background-color: #d97706;
+     }
+
+     .btn-masinfo.blue {
+      background-color: #2563eb;
+     }
+
+     .badge-prog-orange {
+     background-color: #fed7aa;
+     color: #ea580c;
+     }
+
+     .badge-prog-purple {
+     background-color: #ede9fe;
+     color: #7c3aed;
+     }
+    
+   .btn-masinfo {
+    border-radius: 5px;
+
+   }
+
+
+
+   html, body{
+   margin: 0;
+   padding: 0;
+   min-height: 100%;
+   }
+
+   body{
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   }
+
+   .section-wrapper{
+   flex: 1;
+   }
+
+  
+
+
+   </style>
+
+
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="navbar-logo">
+    <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+    SmartTech<br><small style="font-weight:600;font-size:0.7rem;line-height:1">Academy</small>
+  </a>
+  <button class="navbar-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
+    <i class="fas fa-bars"></i>
+  </button>
+  <ul class="navbar-nav">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="courses.html" class="active">Curso</a></li>
+    <li><a href="contact.html">Contáctanos</a></li>
+    <li><a href="about.html">Sobre nosotros</a></li>
+  </ul>
+  <a href="enrollment.html" class="btn-inscribirse">Inscribirse</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Inicio</a> → Cursos</div>
+  <h1>Todos nuestros cursos</h1>
+  <p>Encuentra el programa ideal para tu nivel y horario</p>
+</div>
+
+<!-- COURSES GRID -->
+<div class="section-wrapper">
+  <div class="courses-grid">
+
+    <div class="course-card">
+      <div class="course-card-thumb thumb-purple"><img src="programacion.png" alt=></div>
+      <div class="course-card-body">
+        <span class="course-badge badge-prog-purple">Programación</span>
+        <h3>Programación Web Básica</h3>
+        <p class="course-meta">HTML, CSS, JavaScript. 3 meses · 3h/semana.</p>
+        <div class="course-card-footer">
+          <div class="course-price">$150.000 <span>/Mes</span></div>
+          <button class="btn-masinfo purple">Más info</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-card-thumb thumb-green"><img src="diseño.png" alt=""></div>
+      <div class="course-card-body">
+        <span class="course-badge badge-design">Diseño</span>
+        <h3>Diseño Gráfico Digital</h3>
+        <p class="course-meta">Canva, Figma, Illustrator. 2 meses.</p>
+        <div class="course-card-footer">
+          <div class="course-price">$130.000 <span>/Mes</span></div>
+          <button class="btn-masinfo green">Más info</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-card-thumb thumb-orange"><img src="robotica.png" alt=""></div>
+      <div class="course-card-body">
+        <span class="course-badge badge-prog-orange">Programación</span>
+        <h3>Robótica y Arduino</h3>
+        <p class="course-meta">Electrónica básica y Arduino. 3 meses.</p>
+        <div class="course-card-footer">
+          <div class="course-price">$160.000 <span>/Mes</span></div>
+          <button class="btn-masinfo orange">Más info</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-card-thumb thumb-pink"><img src="marketing.png" alt=""></div>
+      <div class="course-card-body">
+        <span class="course-badge badge-marketing">Marketing</span>
+        <h3>Marketing Digital</h3>
+        <p class="course-meta">Redes sociales, SEO y pauta digital.</p>
+        <div class="course-card-footer">
+          <div class="course-price">$120.000 <span>/Mes</span></div>
+          <button class="btn-masinfo pink">Más info</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-card-thumb thumb-yellow"><img src="ofimatica.png" alt=""></div>
+      <div class="course-card-body">
+        <span class="course-badge badge-ofimatica">Ofimática</span>
+        <h3>Ofimática avanzada</h3>
+        <p class="course-meta">Excel, Word, PowerPoint. 1 mes.</p>
+        <div class="course-card-footer">
+          <div class="course-price">$80.000 <span>/Mes</span></div>
+          <button class="btn-masinfo yellow">Más info</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-card-thumb thumb-blue"><img src="ia.png" alt=""></div>
+      <div class="course-card-body">
+        <span class="course-badge badge-ia">IA</span>
+        <h3>Introducción a la IA</h3>
+        <p class="course-meta">Herramientas de inteligencia artificial. 1 mes.</p>
+        <div class="course-card-footer">
+          <div class="course-price">$140.000 <span>/Mes</span></div>
+          <button class="btn-masinfo blue">Más info</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">SmartTech Academy</span>
+  <div class="footer-social">
+    <a href="https://api.whatsapp.com/send?phone=573505887101" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/unicostacol/" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+  <span class="footer-copy">© 2026 · Barranquilla, Colombia</span>
+</footer>
+
+</body>
+</html>

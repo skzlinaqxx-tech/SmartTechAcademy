@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartTech Academy — Contáctanos</title>
+    <link rel="stylesheet" href="Contactform.jsx">
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    html, body{
+   margin: 0;
+   padding: 0;
+   min-height: 100%;
+   }
+
+   body{
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   }
+
+   .section-wrapper{
+   flex: 1;
+   }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .contact-form-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--card-border);
+    }
+    .contact-info h2 {
+      font-size: 1.5rem;
+      font-weight: 900;
+      margin-bottom: 0.4rem;
+    }
+    .contact-info .contact-subtitle {
+      font-size: 0.9rem;
+      color: var(--text-gray);
+      margin-bottom: 1.8rem;
+    }
+    .contact-info-list { display: flex; flex-direction: column; gap: 1.1rem; }
+    .contact-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .contact-info-item .ci-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--blue-light);
+      color: var(--blue-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-info-item .ci-text {
+      display: flex;
+      flex-direction: column;
+    }
+    .contact-info-item .ci-label {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      font-weight: 600;
+    }
+    .contact-info-item .ci-value {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+    .contact-info-item .ci-sub {
+      font-size: 0.82rem;
+      color: var(--text-gray);
+    }
+
+    @media (max-width: 768px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
+    }
+    .btn-inscribirse {
+      border-radius: 5px;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="navbar-logo">
+    <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+    SmartTech<br><small style="font-weight:600;font-size:0.7rem;line-height:1">Academy</small>
+  </a>
+  <button class="navbar-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
+    <i class="fas fa-bars"></i>
+  </button>
+  <ul class="navbar-nav">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="courses.html">Curso</a></li>
+    <li><a href="contact.html" class="active">Contáctanos</a></li>
+    <li><a href="about.html">Sobre nosotros</a></li>
+  </ul>
+  <a href="enrollment.html" class="btn-inscribirse">Inscribirse</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <h1>Contáctanos</h1>
+  <p>¿Tienes preguntas? Nuestro equipo responde en menos de 24 horas</p>
+</div>
+
+<!-- CONTACT LAYOUT -->
+<div class="section-wrapper">
+  <div class="contact-layout">
+
+    <!-- FORM -->
+    <div class="flex items-center min-h-screen bg-gray-50 dark:bg-gray-900">
+  <div class="container mx-auto">
+    <div class="max-w-md mx-auto my-10 bg-white p-5 rounded-md shadow-sm">
+      <div class="text-center">
+        <h1 class="my-3 text-3xl font-semibold text-gray-700 dark:text-gray-200">
+          Contáctanos
+        </h1>
+        <p class="text-gray-400 dark:text-gray-400">
+          Completa el formulario para mandarnos un mensaje.
+        </p>
+      </div>
+      <div class="m-7">
+        <form action="https://api.web3forms.com/submit" method="POST" id="form">
+          <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+          <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+          <input type="checkbox" name="botcheck" id="" style="display: none;" />
+
+          <div class="mb-6">
+            <label for="name" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Nombre completo</label>
+            <input type="text" name="name" id="name" placeholder="John Doe" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+          </div>
+          <div class="mb-6">
+            <label for="email" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Gmail</label>
+            <input type="email" name="email" id="email" placeholder="you@company.com" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+          </div>
+          <div class="mb-6">
+            <label for="phone" class="text-sm text-gray-600 dark:text-gray-400">Nombre de telefono</label>
+            <input type="text" name="phone" id="phone" placeholder="+1 (555) 1234-567" required class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" />
+          </div>
+          <div class="mb-6">
+            <label for="message" class="block mb-2 text-sm text-gray-600 dark:text-gray-400">Tu mensaje</label>
+
+            <textarea rows="5" name="message" id="message" placeholder="Your Message" class="w-full px-3 py-2 placeholder-gray-300 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" required></textarea>
+          </div>
+          <div class="mb-6">
+            <button type="submit" class="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">
+              Mandar mensaje
+            </button>
+          </div>
+          <p class="text-base text-center text-gray-400" id="result"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- INFO -->
+    <div class="contact-info">
+      <h2>Información de contacto</h2>
+      <p class="contact-subtitle">Estamos aquí para orientarte, no dudes en contactarnos</p>
+
+      <div class="contact-info-list">
+
+        <div class="contact-info-item">
+          <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="ci-text">
+            <span class="ci-value">Barranquilla/Atlántico</span>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+          <div class="ci-text">
+            <span class="ci-value">info@smarttechacademy.co</span>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="ci-icon"><i class="fas fa-comment-dots"></i></div>
+          <div class="ci-text">
+            <span class="ci-value">+57 300 000 0000</span>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="ci-icon"><i class="fas fa-clock"></i></div>
+          <div class="ci-text">
+            <span class="ci-value">Lunes a Viernes</span>
+            <span class="ci-sub">8:00am – 7:00pm</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">SmartTech Academy</span>
+  <div class="footer-social">
+    <a href="https://api.whatsapp.com/send?phone=573505887101" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/unicostacol/" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+  <span class="footer-copy">© 2026 · Barranquilla, Colombia</span>
+</footer>
+
+</body>
+</html>

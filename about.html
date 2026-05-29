@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartTech Academy — Sobre Nosotros</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* Mission/Vision */
+    .mv-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--card-border);
+    }
+    .mv-item { padding: 0 1rem; }
+    .mv-item:first-child { border-right: 1px solid #e5e7eb; }
+    .mv-item .mv-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 1.15rem;
+      font-weight: 900;
+      margin-bottom: 0.8rem;
+    }
+    .mv-item .mv-header i { color: var(--blue-primary); }
+    .mv-item p {
+      font-size: 0.88rem;
+      color: var(--text-gray);
+      line-height: 1.65;
+    }
+
+    /* Values */
+    .values-section { margin-bottom: 2.5rem; }
+    .values-section h2 { font-size: 1.3rem; font-weight: 900; margin-bottom: 1.2rem; }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+    .value-card {
+      background: white;
+      border-radius: var(--radius-md);
+      padding: 1.2rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--card-border);
+    }
+    .value-card .val-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+    }
+    .val-icon-blue   { color: #2563eb; }
+    .val-icon-orange { color: #d97706; }
+    .val-icon-pink   { color: #db2777; }
+    .val-icon-teal   { color: #0d9488; }
+    .value-card p { font-size: 0.82rem; color: var(--text-gray); line-height: 1.5; }
+
+    /* Team */
+    .team-section { background: var(--dark-bg); padding: 2.5rem 0; }
+    .team-inner { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    .team-inner h2 { font-size: 1.4rem; font-weight: 900; color: white; margin-bottom: 1.5rem; }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .team-card {
+      background: var(--dark-card);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      color: white;
+    }
+    .team-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1rem;
+    }
+    .team-avatar {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+    .team-avatar.av2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+    .team-avatar.av3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+    .team-card-header .team-name-block small {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.5);
+      display: block;
+    }
+    .team-card-header .team-name-block strong { font-size: 0.95rem; }
+    .team-card .team-field {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+    .team-card .team-value {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.7rem;
+    }
+    .team-card .team-desc {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.55;
+    }
+
+    @media (max-width: 900px) {
+      .values-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .mv-grid { grid-template-columns: 1fr; }
+      .mv-item:first-child { border-right: none; border-bottom: 1px solid #e5e7eb; padding-bottom: 1.5rem; }
+      .values-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr; }
+    }
+
+    .btn-inscribirse {
+      border-radius: 5px;
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="navbar-logo">
+    <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+    SmartTech<br><small style="font-weight:600;font-size:0.7rem;line-height:1">Academy</small>
+  </a>
+  <button class="navbar-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
+    <i class="fas fa-bars"></i>
+  </button>
+  <ul class="navbar-nav">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="courses.html">Curso</a></li>
+    <li><a href="contact.html">Contáctanos</a></li>
+    <li><a href="about.html" class="active">Sobre nosotros</a></li>
+  </ul>
+  <a href="enrollment.html" class="btn-inscribirse">Inscribirse</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <h1>Sobre nosotros</h1>
+  <p>En SmartTech Academy formamos estudiantes y emprendedores mediante educación tecnológica moderna, práctica e innovadora.</p>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="section-wrapper">
+
+  <!-- Mission / Vision -->
+  <div class="mv-grid">
+    <div class="mv-item">
+      <div class="mv-header"><i class="fas fa-crosshairs"></i> Mision</div>
+      <p>Brindar formación tecnológica accesible y práctica que permita a los estudiantes desarrollar habilidades digitales para su crecimiento académico y profesional.</p>
+    </div>
+    <div class="mv-item">
+      <div class="mv-header"><i class="fas fa-lightbulb"></i> Vision</div>
+      <p>Convertirse en una academia reconocida en Barranquilla por impulsar el aprendizaje tecnológico y la innovación educativa.</p>
+    </div>
+  </div>
+
+  <!-- Values -->
+  <div class="values-section">
+    <h2>Nuestros valores</h2>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="val-header"><i class="fas fa-desktop val-icon-blue"></i> Innovación</div>
+        <p>Promovemos el aprendizaje tecnológico moderno.</p>
+      </div>
+      <div class="value-card">
+        <div class="val-header"><i class="fas fa-heart val-icon-orange"></i> Compromiso</div>
+        <p>Acompañamos a nuestros estudiantes en su crecimiento.</p>
+      </div>
+      <div class="value-card">
+        <div class="val-header"><i class="fas fa-paint-brush val-icon-pink"></i> Creatividad</div>
+        <p>Impulsamos ideas y soluciones digitales.</p>
+      </div>
+      <div class="value-card">
+        <div class="val-header"><i class="fas fa-book-open val-icon-teal"></i> Aprendizaje</div>
+        <p>Fomentamos educación práctica y dinámica.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- TEAM -->
+<section class="team-section">
+  <div class="team-inner">
+    <h2>Nuestro Equipo</h2>
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-card-header">
+          <div class="team-avatar"><img src="carlos.png" alt=""></div>
+          <div class="team-name-block">
+            <small>Nombre</small>
+            <strong>Carlos Martínez</strong>
+          </div>
+        </div>
+        <div class="team-field">Cargo</div>
+        <div class="team-value">Instructor de Programación y Robótica</div>
+        <div class="team-field">Descripción</div>
+        <div class="team-desc">Especialista en desarrollo web y fundamentos de programación.</div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-header">
+          <div class="team-avatar av2"><img src="andrea.png" alt=""></div>
+          <div class="team-name-block">
+            <small>Nombre</small>
+            <strong>Andrea Gómez</strong>
+          </div>
+        </div>
+        <div class="team-field">Cargo</div>
+        <div class="team-value">Instructora de Diseño Gráfico</div>
+        <div class="team-field">Descripción</div>
+        <div class="team-desc">Especialista en branding, ilustración digital y herramientas de diseño.</div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-card-header">
+          <div class="team-avatar av3"><img src="sebastian.png" alt=""></div>
+          <div class="team-name-block">
+            <small>Nombre</small>
+            <strong>Sebastián Rodríguez</strong>
+          </div>
+        </div>
+        <div class="team-field">Cargo</div>
+        <div class="team-value">Instructor de Marketing Digital</div>
+        <div class="team-field">Descripción</div>
+        <div class="team-desc">Experto en redes sociales, publicidad digital y creación de contenido.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">SmartTech Academy</span>
+  <div class="footer-social">
+    <a href="https://api.whatsapp.com/send?phone=573505887101" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/unicostacol/" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+  <span class="footer-copy">© 2026 · Barranquilla, Colombia</span>
+</footer>
+
+</body>
+</html>

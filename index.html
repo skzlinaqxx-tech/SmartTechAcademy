@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartTech Academy — Inicio</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* ---- HERO SECTION ---- */
+    .hero {
+      background: var(--blue-primary);
+      padding: 0;
+      display: flex;
+      align-items: stretch;
+      min-height: 320px;
+      overflow: hidden;
+    }
+    .hero-content {
+      flex: 1;
+      padding: 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: white;
+    }
+    .hero-content h1 {
+      font-size: 2.4rem;
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .hero-content h1 .highlight { color: var(--green-accent); }
+    .hero-content p {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 1.6rem;
+      line-height: 1.55;
+      max-width: 420px;
+    }
+    .hero-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-hero-primary {
+      background: var(--orange-accent);
+      color: white;
+      padding: 10px 28px;
+      border-radius: 22px;
+      font-weight: 800;
+      font-size: 0.92rem;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-hero-primary:hover { background: #e55a28; transform: translateY(-1px); }
+    .btn-hero-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid rgba(255,255,255,0.6);
+      padding: 10px 28px;
+      border-radius: 22px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-hero-secondary:hover { border-color: white; background: rgba(255,255,255,0.08); }
+    .hero-image {
+      width: 560px;
+      height: 306px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-image img {
+      width: 560px;
+      height: 306px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    .hero-image-placeholder {
+      width: 560px;
+      height: 306px;
+      background: linear-gradient(135deg, #1a24b8 0%, #3d4ff0 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5rem;
+    }
+
+    /* ---- STATS ---- */
+    .stats-bar {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .stats-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.8rem 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+      gap: 1rem;
+    }
+    .stat-item {
+      border-right: 1px solid #e5e7eb;
+      padding: 0 1rem;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-item .stat-number {
+      font-size: 1.9rem;
+      font-weight: 900;
+      color: var(--blue-primary);
+    }
+    .stat-item .stat-label {
+      font-size: 0.85rem;
+      color: var(--text-gray);
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    /* ---- FEATURED COURSES ---- */
+    .featured-section { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 0; }
+    .section-header { margin-bottom: 1.5rem; }
+    .section-header h2 { font-size: 1.5rem; font-weight: 900; color: var(--text-dark); }
+    .section-header p { font-size: 0.9rem; color: var(--text-gray); margin-top: 4px; }
+
+    /* ---- WHY US ---- */
+    .why-section {
+      background: var(--dark-bg);
+      color: white;
+      padding: 2.5rem 0;
+      margin-top: 2.5rem;
+    }
+    .why-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .why-inner h2 { font-size: 1.5rem; font-weight: 900; margin-bottom: 1.5rem; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+    }
+    .why-card {
+      background: var(--dark-card);
+      border-radius: var(--radius-md);
+      padding: 1.3rem;
+    }
+    .why-card .why-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+    }
+    .icon-blue   { background: #2563eb; color: white; }
+    .icon-green  { background: #059669; color: white; }
+    .icon-orange { background: #d97706; color: white; }
+    .icon-purple { background: #7c3aed; color: white; }
+    .why-card h4 { font-size: 0.92rem; font-weight: 800; margin-bottom: 0.35rem; }
+    .why-card p  { font-size: 0.82rem; color: rgba(255,255,255,0.6); line-height: 1.5; }
+
+    @media (max-width: 900px) {
+      .hero { flex-direction: column; }
+      .hero-image { width: 100%; height: 200px; }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .hero-content h1 { font-size: 1.7rem; }
+      .stats-inner { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid #e5e7eb; padding: 0.8rem 0; }
+      .stat-item:last-child { border-bottom: none; }
+      .why-grid { grid-template-columns: 1fr; }
+    }
+
+    .btn-inscribirse {
+      border-radius: 5px;
+    }
+
+    .btn-masinfo.purple {
+    background-color: #7c3aed !important;
+    border-radius: 5px;
+    }
+
+     .btn-masinfo.orange {
+      border-radius: 5px;
+     }
+
+     .btn-masinfo.green {
+      border-radius: 5px;
+     }
+
+    .badge-prog-orange {
+    background-color: #fed7aa;
+    color: #ea580c;
+    }
+
+    .badge-prog-purple {
+    background-color: #ede9fe;
+    color: #7c3aed;
+   }
+
+    .btn-hero-primary {
+
+      border-radius: 10px;
+    }
+
+    .btn-hero-secondary {
+      border-radius: 10px;
+    }
+
+    .estudiantes-img {
+      width:560px;
+      height: 306px;;
+    }
+
+  </style>
+
+  
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="navbar-logo">
+    <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+    SmartTech<br><small style="font-weight:600;font-size:0.7rem;line-height:1">Academy</small>
+  </a>
+  <button class="navbar-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
+    <i class="fas fa-bars"></i>
+  </button>
+  <ul class="navbar-nav">
+    <li><a href="index.html" class="active">Inicio</a></li>
+    <li><a href="courses.html">Curso</a></li>
+    <li><a href="contact.html">Contáctanos</a></li>
+    <li><a href="about.html">Sobre nosotros</a></li>
+  </ul>
+  <a href="enrollment.html" class="btn-inscribirse">Inscribirse</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Aprende Tecnología de<br>Forma <span class="highlight">Fácil</span></h1>
+    <p>Programación · Diseño · Marketing · Robótica. Cursos accesibles para jóvenes y adultos.</p>
+    <div class="hero-buttons">
+      <a href="courses.html" class="btn-hero-primary">Ver Cursos</a>
+      <a href="contact.html" class="btn-hero-secondary">Contacto</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <div class="hero-image-placeholder">
+      <span><img src="1.png" alt="estudiantes" class="estudiantes-img"></span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-number">500+</div>
+      <div class="stat-label">Estudiantes</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">6</div>
+      <div class="stat-label">Cursos</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">2 años</div>
+      <div class="stat-label">De experiencia</div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED COURSES -->
+<div class="featured-section">
+  <div class="section-header">
+    <h2>Cursos Destacados</h2>
+    <p>Elige el camino que mejor se adapte a ti</p>
+  </div>
+  <div class="courses-grid">
+
+    <div class="course-card">
+      <div class="course-card-thumb thumb-purple"><img src="programacion.png" alt=""></div>
+      <div class="course-card-body">
+        <span class="course-badge badge-prog-purple">Programación</span>
+        <h3>Programación Web Básica</h3>
+        <p class="course-meta">HTML, CSS, JavaScript. 3 meses · 3h/semana.</p>
+        <div class="course-card-footer">
+          <div class="course-price">$150.000 <span>/Mes</span></div>
+          <button class="btn-masinfo purple">Más info</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-card-thumb thumb-green"><img src="diseño.png" alt=""></div>
+      <div class="course-card-body">
+        <span class="course-badge badge-design">Diseño</span>
+        <h3>Diseño Gráfico Digital</h3>
+        <p class="course-meta">Canva, Figma, Illustrator. 2 meses.</p>
+        <div class="course-card-footer">
+          <div class="course-price">$130.000 <span>/Mes</span></div>
+          <button class="btn-masinfo green">Más info</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="course-card-thumb thumb-orange"><img src="robotica.png" alt=""></div>
+      <div class="course-card-body">
+        <span class="course-badge badge-prog-orange">Programación</span>
+        <h3>Robótica y Arduino</h3>
+        <p class="course-meta">Electrónica básica y Arduino. 3 meses.</p>
+        <div class="course-card-footer">
+          <div class="course-price">$160.000 <span>/Mes</span></div>
+          <button class="btn-masinfo orange">Más info</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- WHY US -->
+<section class="why-section">
+  <div class="why-inner">
+    <h2>¿Porque estudiar con nosotros?</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon icon-blue"><i class="fas fa-graduation-cap"></i></div>
+        <h4>Formación práctica</h4>
+        <p>Proyectos reales desde la primera clase.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon icon-green"><i class="fas fa-chalkboard-teacher"></i></div>
+        <h4>Profesores activos</h4>
+        <p>Docentes en la industria tecnológica.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon icon-orange"><i class="fas fa-wallet"></i></div>
+        <h4>Cursos accesibles</h4>
+        <p>Planes de pago flexibles.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon icon-purple"><i class="fas fa-mobile-alt"></i></div>
+        <h4>Modalidad moderna</h4>
+        <p>Virtual, presencial o mixto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">SmartTech Academy</span>
+  <div class="footer-social">
+    <a href="https://api.whatsapp.com/send?phone=573505887101" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/unicostacol/" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+  <span class="footer-copy">© 2026 · Barranquilla, Colombia</span>
+</footer>
+
+</body>
+</html>

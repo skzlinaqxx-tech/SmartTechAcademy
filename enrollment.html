@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SmartTech Academy — Formulario de Inscripción</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    .enrollment-wrapper {
+      max-width: 580px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+    }
+    .enrollment-card {
+      background: white;
+      border-radius: var(--radius-lg);
+      padding: 2.2rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--card-border);
+    }
+    .tcs-link { color: var(--blue-primary); font-weight: 600; font-size: 0.82rem; }
+    .tcs-link:hover { text-decoration: underline; }
+    .checkbox-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1.4rem;
+      gap: 2px;
+    }
+    .checkbox-row .checkbox-group { justify-content: center; }
+
+    .btn-inscribirse {
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <a href="index.html" class="navbar-logo">
+    <div class="logo-icon"><i class="fas fa-bolt"></i></div>
+    SmartTech<br><small style="font-weight:600;font-size:0.7rem;line-height:1">Academy</small>
+  </a>
+  <button class="navbar-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
+    <i class="fas fa-bars"></i>
+  </button>
+  <ul class="navbar-nav">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="courses.html">Curso</a></li>
+    <li><a href="contact.html" class="active">Contáctanos</a></li>
+    <li><a href="about.html">Sobre nosotros</a></li>
+  </ul>
+  <a href="enrollment.html" class="btn-inscribirse">Inscribirse</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <h1>Formulario de Inscripción</h1>
+  <p>Completa tus datos para inscribirte en nuestros cursos tecnológicos.</p>
+</div>
+
+<!-- FORM -->
+<div class="enrollment-wrapper">
+  <div class="enrollment-card">
+
+    <div class="form-group">
+      <label>Nombre Completo*</label>
+      <input type="text" placeholder="Value"/>
+    </div>
+
+    <div class="form-group">
+      <label>Correo Electronico</label>
+      <input type="email" placeholder="Value"/>
+    </div>
+
+    <div class="form-group">
+      <label>Teléfono</label>
+      <input type="tel" placeholder="Value"/>
+    </div>
+
+    <div class="form-group">
+      <label>Edad</label>
+      <input type="number" placeholder="Value"/>
+    </div>
+
+    <div class="form-group">
+      <label>Curso de interés</label>
+      <select>
+        <option value="">Value</option>
+        <option>Programación Web Básica</option>
+        <option>Diseño Gráfico Digital</option>
+        <option>Robótica y Arduino</option>
+        <option>Marketing Digital</option>
+        <option>Ofimática avanzada</option>
+        <option>Introducción a la IA</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Horario deseado</label>
+      <select>
+        <option value="">Value</option>
+        <option>Mañana (8am – 12pm)</option>
+        <option>Tarde (2pm – 6pm)</option>
+        <option>Noche (6pm – 9pm)</option>
+        <option>Sábados</option>
+      </select>
+    </div>
+
+    <div class="checkbox-row">
+      <label class="checkbox-group">
+        <input type="checkbox" checked/>
+        Acepto los terminos
+      </label>
+      <a href="#" class="tcs-link">Lee nuestros T&Cs</a>
+    </div>
+
+    <button class="btn-submit">Enviar Inscripción</button>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">SmartTech Academy</span>
+  <div class="footer-social">
+    <a href="https://api.whatsapp.com/send?phone=573505887101" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/unicostacol/" target="_blank"><i class="fab fa-instagram"></i></a>
+  </div>
+  <span class="footer-copy">© 2026 · Barranquilla, Colombia</span>
+</footer>
+
+</body>
+</html>
