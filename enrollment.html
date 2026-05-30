@@ -4,6 +4,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>SmartTech Academy — Formulario de Inscripción</title>
+  <link rel="icon" type="image/png" href="image-removebg-preview.png">
   <link rel="stylesheet" href="styles.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
@@ -33,6 +34,13 @@
     .btn-inscribirse {
       border-radius: 5px;
     }
+    .logo-img{
+    height: 45px;
+    width: auto;
+    display: block;
+}
+
+    
   </style>
 </head>
 <body>
@@ -40,15 +48,14 @@
 <!-- NAVBAR -->
 <nav class="navbar">
   <a href="index.html" class="navbar-logo">
-    <div class="logo-icon"><i class="fas fa-bolt"></i></div>
-    SmartTech<br><small style="font-weight:600;font-size:0.7rem;line-height:1">Academy</small>
-  </a>
+    <img src="image-removebg-preview.png" alt="SmartTech Academy" class="logo-img">
+</a>
   <button class="navbar-toggle" onclick="this.nextElementSibling.classList.toggle('open')">
     <i class="fas fa-bars"></i>
   </button>
   <ul class="navbar-nav">
     <li><a href="index.html">Inicio</a></li>
-    <li><a href="courses.html">Curso</a></li>
+    <li><a href="courses.html">Cursos</a></li>
     <li><a href="contact.html" class="active">Contáctanos</a></li>
     <li><a href="about.html">Sobre nosotros</a></li>
   </ul>
@@ -62,52 +69,62 @@
 </div>
 
 <!-- FORM -->
+
 <div class="enrollment-wrapper">
   <div class="enrollment-card">
+<form class="contact-form"
+action="https://api.web3forms.com/submit"
+method="POST">
 
-    <div class="form-group">
-      <label>Nombre Completo*</label>
-      <input type="text" placeholder="Value"/>
-    </div>
+<input type="hidden" name="access_key" value="TU_ACCESS_KEY">
 
-    <div class="form-group">
-      <label>Correo Electronico</label>
-      <input type="email" placeholder="Value"/>
-    </div>
+<div class="form-group">
+<label>Nombre Completo</label>
+<input type="text" name="nombre_completo" required>
+</div>
 
-    <div class="form-group">
-      <label>Teléfono</label>
-      <input type="tel" placeholder="Value"/>
-    </div>
+<div class="form-group">
+<label>Correo Electrónico</label>
+<input type="email" name="correo" required>
+</div>
 
-    <div class="form-group">
-      <label>Edad</label>
-      <input type="number" placeholder="Value"/>
-    </div>
+<div class="form-group">
+<label>Teléfono</label>
+<input type="tel" name="telefono" required>
+</div>
 
-    <div class="form-group">
-      <label>Curso de interés</label>
-      <select>
-        <option value="">Value</option>
-        <option>Programación Web Básica</option>
-        <option>Diseño Gráfico Digital</option>
-        <option>Robótica y Arduino</option>
-        <option>Marketing Digital</option>
-        <option>Ofimática avanzada</option>
-        <option>Introducción a la IA</option>
-      </select>
-    </div>
+<div class="form-group">
+<label>Edad</label>
+<input type="number" name="edad" min="10" max="99" required>
+</div>
 
-    <div class="form-group">
-      <label>Horario deseado</label>
-      <select>
-        <option value="">Value</option>
-        <option>Mañana (8am – 12pm)</option>
-        <option>Tarde (2pm – 6pm)</option>
-        <option>Noche (6pm – 9pm)</option>
-        <option>Sábados</option>
-      </select>
-    </div>
+<div class="form-group">
+<label>Curso de interés</label>
+<select name="curso_interes" required>
+<option value="">Seleccione un curso</option>
+<option>Programación Web Básica</option>
+<option>Diseño Gráfico Digital</option>
+<option>Robótica y Arduino</option>
+<option>Marketing Digital</option>
+<option>Ofimática Avanzada</option>
+<option>Introducción a la IA</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Horario Deseado</label>
+<select name="horario" required>
+<option value="">Seleccione un horario</option>
+<option>Mañana (8am – 12pm)</option>
+<option>Tarde (2pm – 6pm)</option>
+<option>Noche (6pm – 9pm)</option>
+<option>Sábados</option>
+</select>
+</div>
+
+<button type="submit" class="btn-submit">
+Inscribirme
+</button>
 
     <div class="checkbox-row">
       <label class="checkbox-group">
@@ -118,10 +135,8 @@
     </div>
 
     <button class="btn-submit">Enviar Inscripción</button>
-
-  </div>
 </div>
-
+</div>
 <!-- FOOTER -->
 <footer>
   <span class="footer-logo">SmartTech Academy</span>
